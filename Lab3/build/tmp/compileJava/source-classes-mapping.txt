@@ -1,4 +1,0 @@
-Lab3/Main.java
- Lab3.Main
-Lab3/Usuario.java
- Lab3.Usuario
