@@ -1,27 +1,27 @@
 package Lab3;
 public class Respuesta {
-    private int id;
-    private String author;
-    private Date date;
+    private int answerId;
+    private String answerAuthor;
+    private Date answerDate;
     private String content;
     
     public Respuesta(int id, String author, Date date, String content){
-        this.id = id;
-        this.author = author;
-        this.date = date;
+        this.answerId = id;
+        this.answerAuthor = author;
+        this.answerDate = date;
         this.content = content;
     }
     
     public int getId(){
-        return id;
+        return answerId;
     }
     
     public String getAuthor(){
-        return author;
+        return answerAuthor;
     }
     
     public Date getDate(){
-        return date;
+        return answerDate;
     }
     
     public String getContent(){
