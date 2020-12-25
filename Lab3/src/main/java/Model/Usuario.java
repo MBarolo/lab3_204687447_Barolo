@@ -1,4 +1,4 @@
-package Lab3;
+package Model;
 /**
  * Clase Usuario, representa al usuario en el stack
  * Cada usuario tiene 3 elementos, su username, su password y su reputation
@@ -33,7 +33,7 @@ public class Usuario {
         return reputation;
     }
     
-    public void modifyRep(int newRep){
-        this.reputation = newRep;
+    public void setReputation(int newReputation){
+        this.reputation = newReputation;
     }
 }

@@ -1,0 +1,12 @@
+Lab3/Main.java
+ Lab3.Main
+Lab3/Stack.java
+ Lab3.Stack
+Lab3/Respuesta.java
+ Lab3.Respuesta
+Lab3/Usuario.java
+ Lab3.Usuario
+Lab3/Date.java
+ Lab3.Date
+Lab3/Pregunta.java
+ Lab3.Pregunta
