@@ -1,12 +1,16 @@
+Lab3/Model/Usuario.java
+ Lab3.Model.Usuario
+Lab3/Model/Respuesta.java
+ Lab3.Model.Respuesta
+Lab3/Model/Etiquetas.java
+ Lab3.Model.Etiquetas
+Lab3/Model/Pregunta.java
+ Lab3.Model.Pregunta
+Lab3/Model/Stack.java
+ Lab3.Model.Stack
+Lab3/View/Menu.java
+ Lab3.View.Menu
 Lab3/Main.java
  Lab3.Main
-Lab3/Stack.java
- Lab3.Stack
-Lab3/Respuesta.java
- Lab3.Respuesta
-Lab3/Usuario.java
- Lab3.Usuario
-Lab3/Date.java
- Lab3.Date
-Lab3/Pregunta.java
- Lab3.Pregunta
+Lab3/Controller/Controller.java
+ Lab3.Controller.Controller

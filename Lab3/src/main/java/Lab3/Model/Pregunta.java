@@ -1,21 +1,20 @@
-package Model;
+package Lab3.Model;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Pregunta {
     private final int questionId;
     private int votes;
     private List<Respuesta> answers;
-    private List<String> tags;
-    private String title;
-    private String content;
-    private LocalDate questionDate;
-    private String questionAuthor;
+    private final List<String> tags;
+    private final String title;
+    private final String content;
+    private final LocalDate questionDate;
+    private final String questionAuthor;
     private String status;
     private int reward;
     
-    public Pregunta(int id, List<String> tags, String title, String content, String author){
+    public Pregunta(int id, ArrayList<String> tags, String title, String content, String author){
         this.questionId = id;
         this.votes = 0;
         this.answers = new ArrayList();
@@ -64,5 +63,9 @@ public class Pregunta {
     }
     public void setStatus(String status){
         this.status = status;
+    }
+    
+    public void setReward(int reward){
+        this.reward = reward;
     }
 }

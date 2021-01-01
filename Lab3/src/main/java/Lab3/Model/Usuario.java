@@ -1,4 +1,4 @@
-package Model;
+package Lab3.Model;
 /**
  * Clase Usuario, representa al usuario en el stack
  * Cada usuario tiene 3 elementos, su username, su password y su reputation
