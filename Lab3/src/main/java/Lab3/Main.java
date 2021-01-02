@@ -24,22 +24,46 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean exitCondition = true;
         while(exitCondition){
-            m1.mainMenu();
-            String opcion = scanner.nextLine();
-            if(opcion.equals("1")){
-                String newUsername = scanner.nextLine();
-                String newPass = scanner.nextLine();
-                c1.login(newUsername, newPass);
+            if(stackOverflow.getActiveUser().equals("")){
+                m1.mainMenu();
+                String option = scanner.nextLine();
+                if(option.equals("1")){
+                    m1.menuRegister();
+                    String newUsername = scanner.nextLine();
+                    String newPass = scanner.nextLine();
+                    c1.login(newUsername, newPass);
+                }
+                else if(option.equals("2")){
+                    m1.menuRegister();
+                    String username = scanner.nextLine();
+                    String pass = scanner.nextLine();
+                    c1.register(username, pass);
+                }
+                else if(option.equals("3"))
+                    exitCondition = false;
+                else
+                    m1.invalidOption();
             }
-            else if(opcion.equals("2")){
-                m1.menuRegister();
-                String newUsername = scanner.nextLine();
-                String newPass = scanner.nextLine();
-                c1.register(newUsername, newPass);
+            else{
+                m1.loggecMainMenu();
+                String option = scanner.nextLine();
+                switch(option){
+                    case "1":
+                        //ask
+                    case "2":
+                        //answer
+                    case "3":
+                        //reward
+                    case "4":
+                        //accept
+                    case "5":
+                        c1.logout();
+                        break;
+                    case "6":
+                        exitCondition = false;
+                        break;
+                }
             }
-            else if(opcion.equals("3"))
-                exitCondition = false;
-            
         }
         
         

@@ -32,7 +32,7 @@ public class Stack{
         Usuario addedUser = new Usuario(username, password);
         this.getUsers().add(addedUser);
     }
-    public void addActiveUser(String username){
+    public void setActiveUser(String username){
         this.activeUser = username;
     }
 }

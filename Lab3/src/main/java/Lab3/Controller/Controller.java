@@ -23,12 +23,22 @@ public class Controller {
         else{
             for (int i = 0; i < stack.getUsers().size(); i++) {
                 if(stack.getUsers().get(i).getUsername().equals(username) &&  stack.getUsers().get(i).getPassword().equals(password)){
-                    stack.addActiveUser(username);
+                    stack.setActiveUser(username);
                     menu.succesfullyLogged();
                     return;
                 }
             }
             menu.wrongUserOrPass();
+        }
+    }
+    
+    public void logout(){
+        if(stack.getActiveUser().equals("")){
+            menu.noUserToLogOff();
+        }
+        else{
+            menu.loggingOff();
+            stack.setActiveUser("");
         }
     }
 }
