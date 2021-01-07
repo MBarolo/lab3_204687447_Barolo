@@ -57,6 +57,13 @@ public class Pregunta {
     public int getReward(){
         return reward;
     }
+    public int getIdLastAnswer(){
+        if(this.answers.isEmpty())
+            return 0;
+        else
+            return this.answers.size() - 1;
+        
+    }
     
     public void setVotes(int votes){
         this.votes = votes;

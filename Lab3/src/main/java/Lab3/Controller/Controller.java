@@ -45,7 +45,23 @@ public class Controller {
     }
     
     public void ask(String title, String content, List<Etiquetas> tags){
-        Pregunta newQuestion = new Pregunta(stack.getIdLastQuestion(), tags, title, content, stack.getActiveUser());
+        Pregunta newQuestion = new Pregunta(stack.getIdLastQuestion() + 1, tags, title, content, stack.getActiveUser());
+        stack.getQuestions().add(newQuestion);
+    }
     
+    public void answer(String answer, int questionId){
+        boolean searchCondition = true;
+        int idNewAnswer = -1;
+        int i = 0;
+        while(searchCondition){
+            if(stack.getQuestions().get(i).getId() == questionId){
+                idNewAnswer = stack.getQuestions().get(i).getIdLastAnswer() + 1;
+                searchCondition = false;
+            }
+            else
+                i = i + 1; 
+        }
+        Respuesta newAnswer = new Respuesta(idNewAnswer,stack.getActiveUser(), answer);
+        stack.getQuestions().get(i).getAnswers().add(newAnswer);
     }
 }
