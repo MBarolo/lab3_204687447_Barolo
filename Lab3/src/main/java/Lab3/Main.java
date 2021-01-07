@@ -49,7 +49,24 @@ public class Main {
                 String option = scanner.nextLine();
                 switch(option){
                     case "1":
-                        //ask
+                        m1.showTags(tags);
+                        boolean condition = true;
+                        int tagOption;
+                        List<Etiquetas> selectedTags = new ArrayList();
+                        while (condition){
+                            tagOption = Integer.parseInt(scanner.nextLine());
+                            if(tagOption == -1){
+                                condition = false;
+                            }
+                            else{
+                                selectedTags.add(tags.get(tagOption));
+                            }
+                        }
+                        m1.inputTitleAndContent();
+                        String newTitle = scanner.nextLine();
+                        String newContent = scanner.nextLine();
+                        c1.ask(newTitle,newContent,selectedTags);
+                        break;
                     case "2":
                         //answer
                     case "3":

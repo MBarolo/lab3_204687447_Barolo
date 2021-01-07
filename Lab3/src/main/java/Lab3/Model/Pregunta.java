@@ -6,7 +6,7 @@ public class Pregunta {
     private final int questionId;
     private int votes;
     private List<Respuesta> answers;
-    private final List<String> tags;
+    private final List<Etiquetas> tags;
     private final String title;
     private final String content;
     private final LocalDate questionDate;
@@ -14,7 +14,7 @@ public class Pregunta {
     private String status;
     private int reward;
     
-    public Pregunta(int id, ArrayList<String> tags, String title, String content, String author){
+    public Pregunta(int id, List<Etiquetas> tags, String title, String content, String author){
         this.questionId = id;
         this.votes = 0;
         this.answers = new ArrayList();
@@ -36,7 +36,7 @@ public class Pregunta {
     public List<Respuesta> getAnswers(){
         return answers;
     }
-    public List<String> getTags(){
+    public List<Etiquetas> getTags(){
         return tags;
     }
     public String getTitle(){

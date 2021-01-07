@@ -1,4 +1,6 @@
 package Lab3.View;
+import Lab3.Model.*;
+import java.util.*;
 public class Menu {
     public void menuChooseStack(){
         System.out.println("Ingrese el Stack a utilizar: \n");
@@ -33,5 +35,15 @@ public class Menu {
     }
     public void loggecMainMenu(){
         System.out.println("Ingrese la accion que desee realizar:\n\t1. Agregar nueva pregunta\n\t2. Responder pregunta\n\t3. Dar recompensa\n\t4. Aceptar respuesta\n\t5.Cerrar sesion\n\t6.Salir del programa");
+    }
+    public void showTags(List<Etiquetas> tags){
+       System.out.println("Existen las siguientes etiquetas:");
+       for(int i = 0; i < tags.size(); i++){
+           System.out.println(i + tags.get(i).getTagTitle()+ tags.get(i).getTagContent());
+       }
+       System.out.println("Elija las etiquetas deseadas ingresando su numero separados por enter.\nEscriba -1 para dejar de elegir etiquetas.");
+    }
+    public void inputTitleAndContent(){
+        System.out.println("Ingrese el titulo y contenido de su pregunta separados por un enter");
     }
 }

@@ -4,11 +4,13 @@ import java.util.List;
 public class Stack{
     private List<Pregunta> questions;
     private List<Usuario> users;
+    List<Etiquetas> tags;
     private String activeUser;
     
     public Stack(){
         this.questions = new ArrayList();
         this.users = new ArrayList();
+        this.tags = new ArrayList();
         this.activeUser = "";
     }
     
@@ -20,6 +22,13 @@ public class Stack{
     }
     public String getActiveUser(){
         return activeUser;
+    }
+    public int getIdLastQuestion(){
+        if(this.questions.isEmpty()){
+            return 0;
+        }
+        else
+            return this.questions.size() - 1;
     }
     public boolean checkUserAlreadyExists(String username, String password){
         for(int i = 0; i < this.getUsers().size();i++){

@@ -1,4 +1,5 @@
 package Lab3.Controller;
+import java.util.List;
 import Lab3.View.*;
 import Lab3.Model.*;
 public class Controller {
@@ -8,6 +9,7 @@ public class Controller {
         this.menu = menu;
         this.stack = stack;
     }
+   
     //RF
     public void register(String username, String password){
         if(stack.checkUserAlreadyExists(username, password)== false){
@@ -40,5 +42,10 @@ public class Controller {
             menu.loggingOff();
             stack.setActiveUser("");
         }
+    }
+    
+    public void ask(String title, String content, List<Etiquetas> tags){
+        Pregunta newQuestion = new Pregunta(stack.getIdLastQuestion(), tags, title, content, stack.getActiveUser());
+    
     }
 }
