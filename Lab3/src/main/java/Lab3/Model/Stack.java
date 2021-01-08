@@ -28,7 +28,7 @@ public class Stack{
             return 0;
         }
         else
-            return this.questions.size() - 1;
+            return this.questions.size();
     }
     public boolean checkUserAlreadyExists(String username, String password){
         for(int i = 0; i < this.getUsers().size();i++){

@@ -44,17 +44,34 @@ public class Menu {
        System.out.println("Elija las etiquetas deseadas ingresando su numero separados por enter.\nEscriba -1 para dejar de elegir etiquetas.");
     }
     public void showQuestions(List<Pregunta> questions){
-        System.out.println("######################");
-        System.out.println("Preguntas del Stack:");
-        System.out.println("######################");
-        for(int i = 0; i < questions.size(); i++){
-            System.out.println("Pregunta " + questions.get(i).getId()+"hecha por: "+questions.get(i).getQuestionAuthor()+" en: " +questions.get(i).getQuestionDate() + "\nTitulo: "+questions.get(i).getTitle()+"\nDescripcion: "+questions.get(i).getContent()+"\nRecompensa: "+questions.get(i).getReward()+"\nRespuestas:");
-            for(int j = 0; j <questions.get(i).getAnswers().size(); j++){
-                System.out.println("\tRespuesta "+questions.get(i).getAnswers().get(j).getId() + " hecha por: " + questions.get(i).getAnswers().get(j).getAuthor() + " en: " + questions.get(i).getAnswers().get(j).getDate() + "\n\t"+questions.get(i).getAnswers().get(j).getContent()+ "\n\tEstado: "+ questions.get(i).getAnswers().get(j).getStatus());
+        if(questions.isEmpty() == false){
+            System.out.println("######################");
+            System.out.println("Preguntas del Stack:");
+            System.out.println("######################");
+            for(int i = 0; i < questions.size(); i++){
+                System.out.println("Pregunta " + questions.get(i).getId()+"hecha por: "+questions.get(i).getQuestionAuthor()+" en: " +questions.get(i).getQuestionDate() + "\nTitulo: "+questions.get(i).getTitle()+"\nDescripcion: "+questions.get(i).getContent()+"\nRecompensa: "+questions.get(i).getReward()+"\nRespuestas:");
+                for(int j = 0; j <questions.get(i).getAnswers().size(); j++){
+                    System.out.println("\tRespuesta "+questions.get(i).getAnswers().get(j).getId() + " hecha por: " + questions.get(i).getAnswers().get(j).getAuthor() + " en: " + questions.get(i).getAnswers().get(j).getDate() + "\n\t"+questions.get(i).getAnswers().get(j).getContent()+ "\n\tEstado: "+ questions.get(i).getAnswers().get(j).getStatus());
+                    System.out.println("--------------------------------------");
+                }
+                System.out.println("===========================================");
+            }
+        }
+    }
+    public void showUsers(List<Usuario> users){
+        if(users.isEmpty()==false){
+            System.out.println("######################");
+            System.out.println("Usuarios del Stack:");
+            System.out.println("######################");
+            for(int i = 0; i< users.size(); i++){
+                System.out.println("Usuario: "+users.get(i).getUsername()+ " , Reputacion: "+users.get(i).getReputation());
             }
         }
     }
     public void inputTitleAndContent(){
-        System.out.println("Ingrese el titulo y contenido de su pregunta separados por un enter");
+        System.out.println("Ingrese el titulo y contenido de su pregunta separados por un enter:");
+    }
+    public void inputAnswerAndId(){
+        System.out.println("Ingrese el id de la pregunta a responder y la respuesta:");
     }
 }

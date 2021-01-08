@@ -25,6 +25,8 @@ public class Main {
         boolean exitCondition = true;
         while(exitCondition){
             if(stackOverflow.getActiveUser().equals("")){
+                m1.showQuestions(stackOverflow.getQuestions());
+                m1.showUsers(stackOverflow.getUsers());
                 m1.mainMenu();
                 String option = scanner.nextLine();
                 if(option.equals("1")){
@@ -68,7 +70,10 @@ public class Main {
                         c1.ask(newTitle,newContent,selectedTags);
                         break;
                     case "2":
-                        //answer
+                        int idQuestionAnswered = Integer.parseInt(scanner.nextLine());
+                        String stringAnswer = scanner.nextLine();
+                        c1.answer(stringAnswer, idQuestionAnswered);
+                        break;
                     case "3":
                         //reward
                     case "4":
