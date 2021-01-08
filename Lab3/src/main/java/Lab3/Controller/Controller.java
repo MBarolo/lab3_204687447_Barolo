@@ -64,4 +64,18 @@ public class Controller {
         Respuesta newAnswer = new Respuesta(idNewAnswer,stack.getActiveUser(), answer);
         stack.getQuestions().get(i).getAnswers().add(newAnswer);
     }
+    public void reward(int id, int reward){
+        int repUser = -1;
+        for(int i = 0; i<stack.getUsers().size();i++){
+            if(stack.getUsers().get(i).getUsername().equals(stack.getActiveUser())){
+                repUser = stack.getUsers().get(i).getReputation();
+                if(repUser>reward){
+                    stack.getUsers().get(i).setReputation(repUser-reward);
+                    stack.getQuestions().get(id - 1).setReward(reward);
+                }
+                else
+                    menu.notEnoughReputation();
+            }
+        }
+    }
 }

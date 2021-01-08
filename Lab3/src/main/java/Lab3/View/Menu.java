@@ -49,7 +49,7 @@ public class Menu {
             System.out.println("Preguntas del Stack:");
             System.out.println("######################");
             for(int i = 0; i < questions.size(); i++){
-                System.out.println("Pregunta " + questions.get(i).getId()+"hecha por: "+questions.get(i).getQuestionAuthor()+" en: " +questions.get(i).getQuestionDate() + "\nTitulo: "+questions.get(i).getTitle()+"\nDescripcion: "+questions.get(i).getContent()+"\nRecompensa: "+questions.get(i).getReward()+"\nRespuestas:");
+                System.out.println("Pregunta " + questions.get(i).getId()+" hecha por: "+questions.get(i).getQuestionAuthor()+" en: " +questions.get(i).getQuestionDate() + "\nTitulo: "+questions.get(i).getTitle()+"\nDescripcion: "+questions.get(i).getContent()+"\nRecompensa: "+questions.get(i).getReward()+"\nRespuestas:");
                 for(int j = 0; j <questions.get(i).getAnswers().size(); j++){
                     System.out.println("\tRespuesta "+questions.get(i).getAnswers().get(j).getId() + " hecha por: " + questions.get(i).getAnswers().get(j).getAuthor() + " en: " + questions.get(i).getAnswers().get(j).getDate() + "\n\t"+questions.get(i).getAnswers().get(j).getContent()+ "\n\tEstado: "+ questions.get(i).getAnswers().get(j).getStatus());
                     System.out.println("--------------------------------------");
@@ -73,5 +73,8 @@ public class Menu {
     }
     public void inputAnswerAndId(){
         System.out.println("Ingrese el id de la pregunta a responder y la respuesta:");
+    }
+    public void notEnoughReputation(){
+        System.out.println("No tienes suficiente reputacion para ofrecer el reward dado");
     }
 }

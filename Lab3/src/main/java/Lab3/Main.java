@@ -75,7 +75,10 @@ public class Main {
                         c1.answer(stringAnswer, idQuestionAnswered);
                         break;
                     case "3":
-                        //reward
+                        int rewardRequired = Integer.parseInt(scanner.nextLine());
+                        int idQuestion = Integer.parseInt(scanner.nextLine());
+                        c1.reward(rewardRequired,idQuestion);
+                        break;
                     case "4":
                         //accept
                     case "5":

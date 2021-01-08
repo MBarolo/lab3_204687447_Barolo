@@ -31,7 +31,7 @@ public class Stack{
             return this.questions.size();
     }
     public boolean checkUserAlreadyExists(String username, String password){
-        for(int i = 0; i < this.getUsers().size();i++){
+        for(int i = 0; i < this.users.size();i++){
             if(this.getUsers().get(i).getUsername().equals(username))
                 return true;
         }
@@ -39,7 +39,7 @@ public class Stack{
     }
     public void addUserToList(String username, String password){
         Usuario addedUser = new Usuario(username, password);
-        this.getUsers().add(addedUser);
+        this.users.add(addedUser);
     }
     public void setActiveUser(String username){
         this.activeUser = username;
