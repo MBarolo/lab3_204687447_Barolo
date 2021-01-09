@@ -62,7 +62,7 @@ public class Controller {
                 i = i + 1; 
         }
         Respuesta newAnswer = new Respuesta(idNewAnswer,stack.getActiveUser(), answer);
-        stack.getQuestions().get(i).getAnswers().add(newAnswer);
+        stack.getQuestions().get(i).addAnswer(newAnswer);
     }
     public void reward(int id, int reward){
         int repUser = -1;

@@ -14,6 +14,20 @@ public class Pregunta {
     private String status;
     private int reward;
     
+    /**
+     * Clase usuario
+     * @param questionId El identificador de la pregunta
+     * @param votes Valor que indica los votos de la pregunta
+     * @param answers Lista que contiene las respuestas del usuario
+     * @param tags Lista que contiene las tags de la pregunta
+     * @param title String que representa el titulo de la pregunta
+     * @param content String que representa el contenido de la pregunta
+     * @param questionDate Variable que contiene la fecha en cuando se hizo la pregunta
+     * @param questionAuthor String que indica el nombre de usuario del autor de la pregunta
+     * @param status String que representa el estado de la pregunta
+     * @param reward Valor que indica el valor de recompensa de la pregunta
+    */
+    
     public Pregunta(int id, List<Etiquetas> tags, String title, String content, String author){
         this.questionId = id;
         this.votes = 0;
@@ -74,5 +88,8 @@ public class Pregunta {
     
     public void setReward(int reward){
         this.reward = reward;
+    }
+    public void addAnswer(Respuesta newAnswer){
+        this.answers.add(newAnswer);
     }
 }
