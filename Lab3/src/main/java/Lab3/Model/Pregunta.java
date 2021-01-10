@@ -10,7 +10,7 @@ public class Pregunta {
     private final int questionId;
     private int votes;
     private List<Respuesta> answers;
-    private final List<Etiquetas> tags;
+    private final List<Etiqueta> tags;
     private final String title;
     private final String content;
     private final LocalDate questionDate;
@@ -21,13 +21,13 @@ public class Pregunta {
     /**
      * Crea una pregunta
      * @param id Id de la pregunta
-     * @param tags Etiquetas de la pregunta
+     * @param tags Etiqueta de la pregunta
      * @param title Titulo de la pregunta
      * @param content Contenido de la pregunta
      * @param author Autor de la pregunta
      */
     
-    public Pregunta(int id, List<Etiquetas> tags, String title, String content, String author){
+    public Pregunta(int id, List<Etiqueta> tags, String title, String content, String author){
         this.questionId = id;
         this.votes = 0;
         this.answers = new ArrayList();
@@ -49,7 +49,7 @@ public class Pregunta {
     public List<Respuesta> getAnswers(){
         return answers;
     }
-    public List<Etiquetas> getTags(){
+    public List<Etiqueta> getTags(){
         return tags;
     }
     public String getTitle(){

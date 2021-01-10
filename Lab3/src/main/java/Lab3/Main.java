@@ -47,7 +47,7 @@ public class Main {
                         m1.showTags(stackOverflow.getTags());
                         boolean condition = true;
                         int tagOption;
-                        List<Etiquetas> selectedTags = new ArrayList();
+                        List<Etiqueta> selectedTags = new ArrayList();
                         while (condition){
                             tagOption = Integer.parseInt(scanner.nextLine());
                             if(tagOption == -1){

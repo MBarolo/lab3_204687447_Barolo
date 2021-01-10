@@ -44,7 +44,7 @@ public class Controller {
         }
     }
     
-    public void ask(String title, String content, List<Etiquetas> tags){
+    public void ask(String title, String content, List<Etiqueta> tags){
         Pregunta newQuestion = new Pregunta(stack.getIdLastQuestion(), tags, title, content, stack.getActiveUser());
         stack.getQuestions().add(newQuestion);
     }

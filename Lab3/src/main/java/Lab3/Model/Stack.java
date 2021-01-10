@@ -4,7 +4,7 @@ import java.util.List;
 public class Stack{
     private List<Pregunta> questions;
     private List<Usuario> users;
-    private List<Etiquetas> tags;
+    private List<Etiqueta> tags;
     private String activeUser;
     
     /**
@@ -16,11 +16,11 @@ public class Stack{
         this.users = new ArrayList();
         this.tags = new ArrayList();
         //Tags base del stack
-        tags.add(new Etiquetas("C",": Dedicado para preguntas relacionadas con el lenguaje C."));
-        tags.add(new Etiquetas("C++,",": Dedicado para preguntas relacionadas con el lenguaje C++."));
-        tags.add(new Etiquetas("C#,",": Dedicado para preguntas relacionadas con el lenguaje C#."));
-        tags.add(new Etiquetas("Java,",": Dedicado para preguntas relacionadas con el lenguaje Java."));
-        tags.add(new Etiquetas("Python,",": Dedicado para preguntas relacionadas con el lenguaje Python."));
+        tags.add(new Etiqueta("C",": Dedicado para preguntas relacionadas con el lenguaje C."));
+        tags.add(new Etiqueta("C++,",": Dedicado para preguntas relacionadas con el lenguaje C++."));
+        tags.add(new Etiqueta("C#,",": Dedicado para preguntas relacionadas con el lenguaje C#."));
+        tags.add(new Etiqueta("Java,",": Dedicado para preguntas relacionadas con el lenguaje Java."));
+        tags.add(new Etiqueta("Python,",": Dedicado para preguntas relacionadas con el lenguaje Python."));
         this.activeUser = "";
     }
     
@@ -30,7 +30,7 @@ public class Stack{
     public List<Usuario> getUsers(){
         return users;
     }
-    public List<Etiquetas> getTags(){
+    public List<Etiqueta> getTags(){
         return tags;
     }
     public String getActiveUser(){

@@ -1,5 +1,5 @@
 package Lab3.Model;
-public class Etiquetas{
+public class Etiqueta{
     private final String tagTitle;
     private final String tagContent;
     
@@ -8,7 +8,7 @@ public class Etiquetas{
      * @param tagContent String que representa el contenido de la etiqueta
      */
     
-    public Etiquetas(String tagTitle, String tagContent){
+    public Etiqueta(String tagTitle, String tagContent){
         this.tagTitle = tagTitle;
         this.tagContent = tagContent;
     }
