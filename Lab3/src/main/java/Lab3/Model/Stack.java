@@ -4,14 +4,11 @@ import java.util.List;
 public class Stack{
     private List<Pregunta> questions;
     private List<Usuario> users;
-    List<Etiquetas> tags;
+    private List<Etiquetas> tags;
     private String activeUser;
     
     /**
-     * @param questions Lista de Preguntas que contiene las preguntas del stack
-     * @param users Lista de Usuraios que contiene los usuarios del stack
-     * @param tags Lista de Etiquetas que contiene las etiquetas del stack
-     * @param activeUser String que indica el nombre de usuario con sesion iniciada, si existe
+     * Stack vacio con etiquetas bases
      */
     
     public Stack(){
@@ -33,6 +30,9 @@ public class Stack{
     public List<Usuario> getUsers(){
         return users;
     }
+    public List<Etiquetas> getTags(){
+        return tags;
+    }
     public String getActiveUser(){
         return activeUser;
     }
@@ -43,6 +43,12 @@ public class Stack{
         else
             return this.questions.size();
     }
+    /**
+     * Verifica si el nombre de usuario entregado esta registrado en el stack
+     * @param username String que representa el nuevo nombre de usuario
+     * @param password String que representa la nueva contraseña
+     * @return true o false dependiendo si el nombre de usuario dado existe o no
+     */
     public boolean checkUserAlreadyExists(String username, String password){
         for(int i = 0; i < this.users.size();i++){
             if(this.getUsers().get(i).getUsername().equals(username))
@@ -50,10 +56,19 @@ public class Stack{
         }
         return false;
     }
+    /**
+     * Añade un usuario a la lista de usuarios del stack
+     * @param username String que representa el nuevo nombre de usuario
+     * @param password String que representa la contraseña del nuevo nombre de usuario
+     */
     public void addUserToList(String username, String password){
         Usuario addedUser = new Usuario(username, password);
         this.users.add(addedUser);
     }
+    /**
+     * Settea el nombre de usuario entregado como usuario activo
+     * @param username String que representa nombre de usuario activo
+     */
     public void setActiveUser(String username){
         this.activeUser = username;
     }

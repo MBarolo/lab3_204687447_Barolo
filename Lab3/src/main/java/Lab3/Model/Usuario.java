@@ -9,10 +9,8 @@ public class Usuario {
     private int reputation;
     
     /**
-     * Clase usuario
      * @param username El nombre de usuario del usuario
      * @param password La contraseña del usuario
-     * @param reputation La reputacion del usuario
     */
     
     public Usuario(String username, String password){
@@ -32,7 +30,9 @@ public class Usuario {
     public int getReputation(){
         return reputation;
     }
-    
+    /**
+     * @param newReputation Valor que representa la nueva reputacion del usuario
+     */
     public void setReputation(int newReputation){
         this.reputation = newReputation;
     }

@@ -1,7 +1,11 @@
 package Lab3.Model;
 import java.time.LocalDate;
 import java.util.*;
-
+/**
+ * Clase Pregunta representa a las preguntas en el stack, contiene un valor questionId identificador, un valor votes votos,
+ * una lista de Respuesta respuestas, un String title, un String content, un LocalDate questionDate para la fecha de la pregunta,
+ * un String questionAuthor, un String status que indica el estado de la pregunta (cerrada - abierta) y un valor reward.
+ */
 public class Pregunta {
     private final int questionId;
     private int votes;
@@ -15,18 +19,13 @@ public class Pregunta {
     private int reward;
     
     /**
-     * Clase usuario
-     * @param questionId El identificador de la pregunta
-     * @param votes Valor que indica los votos de la pregunta
-     * @param answers Lista que contiene las respuestas del usuario
-     * @param tags Lista que contiene las tags de la pregunta
-     * @param title String que representa el titulo de la pregunta
-     * @param content String que representa el contenido de la pregunta
-     * @param questionDate Variable que contiene la fecha en cuando se hizo la pregunta
-     * @param questionAuthor String que indica el nombre de usuario del autor de la pregunta
-     * @param status String que representa el estado de la pregunta
-     * @param reward Valor que indica el valor de recompensa de la pregunta
-    */
+     * Crea una pregunta
+     * @param id Id de la pregunta
+     * @param tags Etiquetas de la pregunta
+     * @param title Titulo de la pregunta
+     * @param content Contenido de la pregunta
+     * @param author Autor de la pregunta
+     */
     
     public Pregunta(int id, List<Etiquetas> tags, String title, String content, String author){
         this.questionId = id;
@@ -71,11 +70,16 @@ public class Pregunta {
     public int getReward(){
         return reward;
     }
+    /**
+     * Retorna el id que deberia tener la ultima pregunta (pregunta a crear)
+     * @return el tamaño de la lista de respuestas, ya que al "partir" de 0, este tamaño siempre sera el id de la respuesta
+     * siguiente
+     */
     public int getIdLastAnswer(){
         if(this.answers.isEmpty())
             return 0;
         else
-            return this.answers.size() - 1;
+            return this.answers.size();
         
     }
     
@@ -89,6 +93,10 @@ public class Pregunta {
     public void setReward(int reward){
         this.reward = reward;
     }
+    /**
+     * Agrega una nueva respuesta a la lista de respuestas de la pregunta
+     * @param newAnswer Nueva respuesta a ser agregada
+     */
     public void addAnswer(Respuesta newAnswer){
         this.answers.add(newAnswer);
     }
