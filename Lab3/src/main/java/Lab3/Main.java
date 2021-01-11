@@ -7,9 +7,47 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
-        Stack stackOverflow = new Stack();
+        Stack stackOverflow = new Stack();       
         Menu m1 = new Menu();
         Controller c1 = new Controller(m1, stackOverflow);
+        //====================================================================
+        //CREACION DEL STACK CARGADO
+        stackOverflow.addUserToList("juan99", "pythonesmuyfacil");
+        stackOverflow.addUserToList("daniel5", "programacion123");
+        stackOverflow.addUserToList("francisco91", "123");
+        stackOverflow.addUserToList("matias", "contrasenastack123");
+        List<Etiqueta> t1 = new ArrayList();
+        t1.add(stackOverflow.getTags().get(0));
+        t1.add(stackOverflow.getTags().get(5));
+        List<Etiqueta> t2 = new ArrayList();
+        t2.add(stackOverflow.getTags().get(3));
+        t2.add(stackOverflow.getTags().get(7));
+        List<Etiqueta> t3 = new ArrayList();
+        t3.add(stackOverflow.getTags().get(3));
+        t3.add(stackOverflow.getTags().get(7));
+        t3.add(stackOverflow.getTags().get(6));
+        List<Etiqueta> t4 = new ArrayList();
+        t4.add(stackOverflow.getTags().get(5));
+        t4.add(stackOverflow.getTags().get(3));
+        List<Etiqueta> t5 = new ArrayList();
+        t5.add(stackOverflow.getTags().get(0));
+        t5.add(stackOverflow.getTags().get(5));
+        stackOverflow.getQuestions().add(new Pregunta(0,t1,"Ayuda con C","Como pido memoria en C?","juan99"));
+        stackOverflow.getQuestions().add(new Pregunta(1,t2,"Diagramas UML", "Ayuda, no se como hacer un diagrama UML", "matias"));
+        stackOverflow.getQuestions().add(new Pregunta(2,t3, "Clases en java","No se como implementar clases en java","francisco91"));
+        stackOverflow.getQuestions().add(new Pregunta(3,t4,"Etiquetas","Como se usan etiquetas?","juan99"));
+        stackOverflow.getQuestions().add(new Pregunta(4,t5,"Modulo en C","Que simbolo era para calcular el modulo en C?","daniel5"));
+        stackOverflow.getQuestions().get(0).getAnswers().add(new Respuesta(0,"matias","con malloc()"));
+        stackOverflow.getQuestions().get(0).getAnswers().add(new Respuesta(1,"francisco91","asi es"));
+        stackOverflow.getQuestions().get(1).getAnswers().add(new Respuesta(0,"juan99","con draw.io"));
+        stackOverflow.getQuestions().get(1).getAnswers().add(new Respuesta(1,"matias","gracias"));
+        stackOverflow.getQuestions().get(2).getAnswers().add(new Respuesta(0,"francisco91","no lo se"));
+        stackOverflow.getQuestions().get(2).getAnswers().add(new Respuesta(1,"daniel5","debes definirla en un archivo .java"));
+        stackOverflow.getQuestions().get(3).getAnswers().add(new Respuesta(0,"matias","debes elegirlas al hacer una pregunta"));
+        stackOverflow.getQuestions().get(3).getAnswers().add(new Respuesta(1,"daniel5","y poner -1 cuando termines"));
+        stackOverflow.getQuestions().get(4).getAnswers().add(new Respuesta(0,"daniel5","por favor que no me acuerdo"));
+        stackOverflow.getQuestions().get(4).getAnswers().add(new Respuesta(1,"francisco91","con el simbolo %"));
+        //==============================================================================================================================
         Scanner scanner = new Scanner(System.in);
         boolean exitCondition = true;
         while(exitCondition){

@@ -24,6 +24,9 @@ public class Stack{
         tags.add(new Etiqueta("C#,",": Dedicado para preguntas relacionadas con el lenguaje C#."));
         tags.add(new Etiqueta("Java,",": Dedicado para preguntas relacionadas con el lenguaje Java."));
         tags.add(new Etiqueta("Python,",": Dedicado para preguntas relacionadas con el lenguaje Python."));
+        tags.add(new Etiqueta("Programacion,", ": Dedicado para preguntas relacionadas con programacion"));
+        tags.add(new Etiqueta("Teoria,",": Dedicado para preguntas relacionadas con teoria"));
+        tags.add(new Etiqueta("Diseño,","Dedicado para preguntas relacionadas con diseño"));
         this.activeUser = "";
     }
     /**
