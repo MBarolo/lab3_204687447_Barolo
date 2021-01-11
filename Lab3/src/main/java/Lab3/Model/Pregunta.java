@@ -39,40 +39,79 @@ public class Pregunta {
         this.status = "Abierta";
         this.reward = 0;
     }
-    
+    /**
+     * Retorna el id de la pregunta
+     * @return Id de la pregunta
+     */
     public int getId(){
         return questionId;
     }
+    /**
+     * Retorna los votos de la pregunta
+     * @return Votos de la pregunta
+     */
     public int getVotes(){
         return votes;
     }
+    /**
+     * Retorna la lista de respuestas
+     * @return Lista de respuestas
+     */
     public List<Respuesta> getAnswers(){
         return answers;
     }
+    /**
+     * Retorna la lista de etiquetas
+     * @return Lista de etiquetas
+     */
     public List<Etiqueta> getTags(){
         return tags;
     }
+    /**
+     * Retorna el titulo de la pregunta
+     * @return titulo de la pregunta
+     */
     public String getTitle(){
         return title;
     }
+    /**
+     * Retorna el contenido de la preugunta
+     * @return Contenido de la pregunta
+     */
     public String getContent(){
         return content;
     }
+    /**
+     * Retorna la fecha de la pregunta
+     * @return Fecha de la pregunta
+     */
     public LocalDate getQuestionDate(){
         return questionDate;
     }
+    /**
+     * Retorna el nombre de usuario del autor de la pregunta
+     * @return Nombre de usuario del autord de la pregunta
+     */
     public String getQuestionAuthor(){
         return questionAuthor;
     }
+    /**
+     * Retorna el estado de la pregunta
+     * @return Estado de la pregunta
+     */
     public String getStatus(){
         return status;
     }
+    /**
+     * Retorna la recompensa de la pregunta
+     * @return Recompensa de la pregunta
+     */
     public int getReward(){
         return reward;
     }
     /**
      * Retorna el id que deberia tener la ultima pregunta (pregunta a crear)
-     * @return el tamaño de la lista de respuestas, ya que al "partir" de 0, este tamaño siempre sera el id de la respuesta
+     * @return el tamaño de la lista de respuestas, ya que al "partir" de 0 la lista, este tamaño siempre sera el id de la respuesta
      * siguiente
      */
     public int getIdLastAnswer(){
@@ -82,14 +121,24 @@ public class Pregunta {
             return this.answers.size();
         
     }
-    
+    /**
+     * Cambia el valor de votos al parametro dado
+     * @param votes nuevosVotos
+     */
     public void setVotes(int votes){
         this.votes = votes;
     }
+    /**
+     * Cambia el valor de estado al parametro dado
+     * @param status nuevoEstado
+     */
     public void setStatus(String status){
         this.status = status;
     }
-    
+    /**
+     * Cambia el valor de recompensa al parametro dado
+     * @param reward nuevaRecompensa
+     */
     public void setReward(int reward){
         this.reward = reward;
     }

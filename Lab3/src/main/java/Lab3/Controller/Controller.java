@@ -2,15 +2,28 @@ package Lab3.Controller;
 import java.util.List;
 import Lab3.View.*;
 import Lab3.Model.*;
+/**
+ * Clase controller, que opera un stack y el menu de ese stack.
+ */
 public class Controller {
     private final Menu menu;
     private final Stack stack;
+    /**
+     * Crea un controlador para operar a los parametros dados
+     * @param menu menu controlado por controlador
+     * @param stack stack controlado por controlador
+     */
     public Controller(Menu menu, Stack stack){
         this.menu = menu;
         this.stack = stack;
     }
    
     //RF
+    /**
+     * registra un nuevo usuario en el stack, si no existe ya
+     * @param username nombre de usuario nuevo
+     * @param password contraseña de usuario nuevo
+     */
     public void register(String username, String password){
         if(stack.checkUserAlreadyExists(username, password)== false){
             stack.addUserToList(username, password);
@@ -18,6 +31,11 @@ public class Controller {
         else
             menu.showMessage("El usuario ya existe");
     }
+    /**
+     * Inicia sesion en el stack, si existe el usuario
+     * @param username nombre de usuario a iniciar sesion
+     * @param password contraseña de usuario a iniciar sesion
+     */
     public void login(String username, String password){
         if(stack.getUsers().isEmpty()){
             menu.showMessage("No existen usuarios registrados");
@@ -33,7 +51,9 @@ public class Controller {
             menu.showMessage("Usuario o contraseña incorrectos");
         }
     }
-    
+    /**
+     * Cierra sesion iniciada, si existe
+     */
     public void logout(){
         if(stack.getActiveUser().equals("")){
             menu.showMessage("No hay usuario con sesion iniciada");
@@ -43,12 +63,21 @@ public class Controller {
             stack.setActiveUser("");
         }
     }
-    
+    /**
+     * Añade una pregunta a la lista de preguntas del stack
+     * @param title String que indica el titulo de la pregunta
+     * @param content String que indica el contenido de la pregunta
+     * @param tags  Lista de Etiquetas que indica las etiquetas escogidas para la pregunta
+     */
     public void ask(String title, String content, List<Etiqueta> tags){
         Pregunta newQuestion = new Pregunta(stack.getIdLastQuestion(), tags, title, content, stack.getActiveUser());
         stack.getQuestions().add(newQuestion);
     }
-    
+    /**
+     * Añade una respuesta a la pregunta con id dado
+     * @param answer String que contiene la respuesta
+     * @param questionId Id de la pregunta a responder
+     */
     public void answer(String answer, int questionId){
         boolean searchCondition = true;
         int idNewAnswer = -1;
@@ -68,6 +97,11 @@ public class Controller {
         else
             menu.showMessage("Pregunta no encontrada");
     }
+    /**
+     * Añade una recompensa a la pregunta dada, en caso de tener ya recompensa el valor se añade
+     * @param id id de la pregunta a recompensar
+     * @param reward valor de la recompensa
+     */
     public void reward(int id, int reward){
         if(stack.getQuestions().get(id).getStatus().equals("Abierta")){
             int repUser = 0;
@@ -89,7 +123,11 @@ public class Controller {
         else
             menu.showMessage("Pregunta cerrada, no puede realizarse el reward");
     }
-    
+    /**
+     * Metodo que acepta la respuesta de la pregunta especificada, cambia el estado a aceptada, el estado de la pregunta a cerrada y reparte la reputacion a quien corresponda
+     * @param questionId id de la pregunta donde se encuentra la respuesta a aceptar
+     * @param answerId id de la respuesta a aceptar
+     */
     public void accept(int questionId, int answerId){
         if(stack.getQuestions().get(questionId).getStatus().equals("Abierta") && questionId<=stack.getQuestions().size() && answerId<=stack.getQuestions().get(questionId).getAnswers().size() && stack.getQuestions().get(questionId).getQuestionAuthor().equals(stack.getActiveUser())){
             for(int i = 0; i<stack.getUsers().size();i++){

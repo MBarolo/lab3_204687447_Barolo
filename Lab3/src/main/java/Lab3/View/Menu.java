@@ -1,10 +1,21 @@
 package Lab3.View;
 import Lab3.Model.*;
 import java.util.*;
+/**
+ * Clase menu, usada para imprimir elementos del stack por pantalla, o bien mensajes de error
+ * @author mati
+ */
 public class Menu {
+    /**
+     * Imprime el string pasado como argumento
+     * @param msg mensaje a imprimir
+     */
     public void showMessage(String msg){
         System.out.println(msg);
     }
+    /**
+     * Imprime por pantalla em menu principal
+     */
     public void mainMenu(){
         System.out.println("#####################\nStackOverflow\n#####################");
         System.out.println("\t-Ingrese 1 para iniciar sesión\n\t-Ingrese 2 para registrarse\n\t-Ingrese 3 para salir");

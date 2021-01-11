@@ -1,4 +1,7 @@
 package Lab3.Model;
+/**
+ * Clase etiqueta, formada por un String tagTitle, titulo de la etiqueta y un String tagContent, contenido de la etiqueta
+ */
 public class Etiqueta{
     private final String tagTitle;
     private final String tagContent;
@@ -12,10 +15,17 @@ public class Etiqueta{
         this.tagTitle = tagTitle;
         this.tagContent = tagContent;
     }
-    
+    /**
+     * Getter titulo de la etiqueta
+     * @return titulo de la etiqueta
+     */
     public String getTagTitle(){
         return tagTitle;
     }
+    /**
+     * Getter contenido de la etiqueta
+     * @return Contenido de la etiqueta
+     */
     public String getTagContent(){
         return tagContent;
     }

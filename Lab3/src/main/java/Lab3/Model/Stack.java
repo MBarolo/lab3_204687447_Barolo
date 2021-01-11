@@ -1,6 +1,9 @@
 package Lab3.Model;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Clase stack, formada por una lista de Pregunta, una lista de Usuario, una lista de Etiqueta y un String usuarioActivo
+ */
 public class Stack{
     private List<Pregunta> questions;
     private List<Usuario> users;
@@ -8,7 +11,7 @@ public class Stack{
     private String activeUser;
     
     /**
-     * Stack vacio con etiquetas bases
+     * Stack vacio con algunas etiquetas bases
      */
     
     public Stack(){
@@ -23,19 +26,38 @@ public class Stack{
         tags.add(new Etiqueta("Python,",": Dedicado para preguntas relacionadas con el lenguaje Python."));
         this.activeUser = "";
     }
-    
+    /**
+     * Getter de Lista de Pregunta
+     * @return Lista de Pregunta
+     */
     public List<Pregunta> getQuestions(){
         return questions;
     }
+    /**
+     * Getter de Lista de Usuario
+     * @return Lista de Usuario
+     */
     public List<Usuario> getUsers(){
         return users;
     }
+    /**
+     * Getter de Lista de Etiqueta
+     * @return Lista de Etiqueta
+     */
     public List<Etiqueta> getTags(){
         return tags;
     }
+    /**
+     * Getter de Usuario Activo
+     * @return String que contiene el usuario activo
+     */
     public String getActiveUser(){
         return activeUser;
     }
+    /**
+     * Getter que retorna el id que debiera tener la ultima pregunta (a añadir)
+     * @return Ultimo id (para pregunta a añadir)
+     */
     public int getIdLastQuestion(){
         if(this.questions.isEmpty()){
             return 0;
